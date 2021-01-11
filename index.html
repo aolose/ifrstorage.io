@@ -1,20 +1,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Iframe storage demo</title>
+    <style>
+    iframe {
+        width: 348px;
+        max-width: 98%;
+        height: 500px;
+        border: 2px solid #e3e7e8;
+        box-shadow: inset #e3e3e3 0 0 8px;
+    }
+    p {
+        color: #9cadc1;
+        padding: 0 10px;
+    }
+
+    pre {
+        background: #f2f2f2;
+        width: 300px;
+        padding: 10px;
+        border-radius: 3px;
+        border: 1px solid #d9d9d9;
+        color: #546E7A;
+    }
+    <style>
 </head>
 <body>
 <iframe src="https://i03.gitee.io/iframe"></iframe>
 <br/>
-<button id="a">show localStorage</button>
-<div id="i"></div>
+<p>Top Page localStorage:</p>
+<pre id="i"></pre>
 <script>
-    document.getElementById('a').onclick=function (){
-        document.getElementById('i').innerText=JSON.stringify(localStorage," "," ")
-    }
+ function a() {
+    document.getElementById('i').innerText=JSON.stringify(localStorage," "," ")
+}
+window.addEventListener("message",a)
 </script>
 <script src="./ifrStorage.js"></script>
 </body>
