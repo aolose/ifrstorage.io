@@ -37,7 +37,9 @@
 <pre id="i"></pre>
 <script>
  function a() {
-   setTimeout(function(){ document.getElementById('i').innerText=JSON.stringify(localStorage," ",," ")},10);
+   setTimeout(function(){
+       document.getElementById('i').innerText=JSON.stringify(localStorage," "," ")
+   },10);
 }
 window.addEventListener("message",a)
 </script>
